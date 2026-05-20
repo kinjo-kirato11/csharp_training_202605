@@ -1,6 +1,6 @@
 using System.ComponentModel.DataAnnotations;
 
-namespace EmployeeManagementWeb.Infrastructures.Entities
+namespace WebEmployeeManagement.Infrastructures.Entities
 {
     public class User
     {
