@@ -1,32 +1,44 @@
 <mxfile host="app.diagrams.net">
   <diagram name="ページ-1" id="_a7TSTPUD4ZUb4yu-kRl">
-    <mxGraphModel dx="774" dy="451" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="774" dy="469" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
         <mxCell id="LVNKJldPZUcnk_xSlG1G-1" parent="1" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" value="EmployeeList" vertex="1">
-          <mxGeometry height="120" width="170" x="170" y="20" as="geometry" />
+          <mxGeometry height="120" width="170" x="170" y="140" as="geometry" />
         </mxCell>
-        <mxCell id="LVNKJldPZUcnk_xSlG1G-4" parent="LVNKJldPZUcnk_xSlG1G-1" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" value="+ ToString():String&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" vertex="1">
+        <mxCell id="LVNKJldPZUcnk_xSlG1G-4" parent="LVNKJldPZUcnk_xSlG1G-1" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" value="+ ToString():String&lt;div&gt;+View(EmployeeList):void&lt;br&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;/div&gt;" vertex="1">
           <mxGeometry height="94" width="170" y="26" as="geometry" />
         </mxCell>
         <mxCell id="LVNKJldPZUcnk_xSlG1G-5" parent="1" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" value="DepartmentList" vertex="1">
-          <mxGeometry height="120" width="170" x="390" y="20" as="geometry" />
+          <mxGeometry height="120" width="170" x="400" y="140" as="geometry" />
         </mxCell>
-        <mxCell id="LVNKJldPZUcnk_xSlG1G-6" parent="LVNKJldPZUcnk_xSlG1G-5" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" value="+ ToString():String&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" vertex="1">
+        <mxCell id="LVNKJldPZUcnk_xSlG1G-6" parent="LVNKJldPZUcnk_xSlG1G-5" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" value="+ ToString():String&lt;div&gt;+View(DepartmentList):void&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" vertex="1">
           <mxGeometry height="94" width="170" y="26" as="geometry" />
         </mxCell>
         <mxCell id="LVNKJldPZUcnk_xSlG1G-7" parent="1" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" value="EmployeeAdd" vertex="1">
-          <mxGeometry height="120" width="170" x="170" y="190" as="geometry" />
+          <mxGeometry height="120" width="170" x="170" y="380" as="geometry" />
         </mxCell>
         <mxCell id="LVNKJldPZUcnk_xSlG1G-8" parent="LVNKJldPZUcnk_xSlG1G-7" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" value="+ Add(String):void&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" vertex="1">
           <mxGeometry height="94" width="170" y="26" as="geometry" />
         </mxCell>
         <mxCell id="LVNKJldPZUcnk_xSlG1G-9" parent="1" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" value="DepartmentAdd" vertex="1">
-          <mxGeometry height="120" width="170" x="390" y="190" as="geometry" />
+          <mxGeometry height="120" width="170" x="405" y="380" as="geometry" />
         </mxCell>
         <mxCell id="LVNKJldPZUcnk_xSlG1G-10" parent="LVNKJldPZUcnk_xSlG1G-9" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" value="+ Add(String):void&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" vertex="1">
           <mxGeometry height="94" width="170" y="26" as="geometry" />
+        </mxCell>
+        <mxCell id="LVNKJldPZUcnk_xSlG1G-11" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="社員一覧を取得して表示" vertex="1">
+          <mxGeometry height="30" width="160" x="175" y="90" as="geometry" />
+        </mxCell>
+        <mxCell id="LVNKJldPZUcnk_xSlG1G-12" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="部署一覧を取得して表示" vertex="1">
+          <mxGeometry height="30" width="160" x="414" y="90" as="geometry" />
+        </mxCell>
+        <mxCell id="LVNKJldPZUcnk_xSlG1G-13" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="社員を追加する" vertex="1">
+          <mxGeometry height="30" width="160" x="170" y="320" as="geometry" />
+        </mxCell>
+        <mxCell id="LVNKJldPZUcnk_xSlG1G-14" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="部署を追加する" vertex="1">
+          <mxGeometry height="30" width="160" x="410" y="320" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
