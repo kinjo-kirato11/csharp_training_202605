@@ -3,7 +3,7 @@
     ViewData["Title"] = "部署追加";
 }
 
-<h2>部署追加</h2>
+<h2>部署登録</h2>
 
 @if (ViewBag.ErrorMessage != null)
 {
@@ -11,17 +11,18 @@
 }
 
 <form asp-action="Create" method="post">
-    <div>
-        <label>部署ID</label>
-        <input asp-for="DepartmentId" />
+    <div class ="form-group">
+        <label asp-for="DepartmentId">部署ID</label>
+        <input asp-for="DepartmentId" class="form-control" />
+        <span asp-validation-for="DepartmentId" class="validation"></span>
     </div>
-    <div>
-        <label>部署名</label>
-        <input asp-for="DepartmentName" />
+    <div class="form-group">
+        <label asp-for="DepartmentName">部署名</label>
+        <input asp-for="DepartmentName" class="form-control" />
+        <span asp-validation-for="DepartmentName" class="validation"></span>
     </div>
     <div class="button-area">
-        <button type="submit" class="btn btn-primary">追加</button>
+        <button type="submit" class="btn btn-primary">登録</button>
     </div>
 </form>
-
 <p><a asp-controller="Departments" asp-action="Index">部署一覧へ戻る</a></p>

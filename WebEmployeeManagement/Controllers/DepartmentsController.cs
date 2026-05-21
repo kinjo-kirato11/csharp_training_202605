@@ -3,12 +3,15 @@ using DepartmentList.Models;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using System.Security.Cryptography;
 
 namespace DepartmentList.Controllers;
 
 public class DepartmentsController : Controller
 {
-    public IActionResult Index()
+    
+
+        public IActionResult Index()
     {
         var departmentList = new List<Department>
         {
@@ -22,4 +25,13 @@ public class DepartmentsController : Controller
     {
         return View();
     }
+    [HttpPost]
+    public IActionResult Create(Department department)
+    {        if (ModelState.IsValid)
+        {            
+            return RedirectToAction("Index");
+        }
+        return View(department);    
+    }
+    
 }

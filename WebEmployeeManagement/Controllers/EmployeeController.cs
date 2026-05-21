@@ -22,5 +22,15 @@ public class EmployeesController : Controller
     {
         return View();
     }
+    public IActionResult Create(Employee employee)
+    {
+        if (ModelState.IsValid)
+        {
+            
+            // データベースに保存する処理をここに追加
+            return RedirectToAction("Index");
+        }
+        return View(employee);
+    }
 }
     
