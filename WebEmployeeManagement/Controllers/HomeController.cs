@@ -1,4 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
+using EmployeeList.Models;
+using System.Collections.Generic;
 
 namespace EmployeeList.Controllers;
 

@@ -1,0 +1,25 @@
+@model DepartmentList.Models.Department
+@{
+    Layout = null;
+}
+
+<h2>部署追加</h2>
+
+@if (ViewBag.ErrorMessage != null)
+{
+    <p style="color:red;">@ViewBag.ErrorMessage</p>
+}
+
+<form asp-action="Create" method="post">
+    <div>
+        <label>部署ID</label>
+        <input asp-for="DepartmentId" />
+    </div>
+    <div>
+        <label>部署名</label>
+        <input asp-for="DepartmentName" />
+    </div>
+    <button type="submit">追加</button>
+</form>
+
+<p><a asp-controller="Departments" asp-action="Index">部署一覧へ戻る</a></p>

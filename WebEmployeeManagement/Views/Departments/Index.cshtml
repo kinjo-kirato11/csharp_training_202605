@@ -1,0 +1,23 @@
+@model List<DepartmentList.Models.Department>
+@{
+    Layout = null;
+}
+
+<h2>部署一覧</h2>
+<table border="1">
+    <thead>
+        <tr>
+            <th>部署ID</th>
+            <th>部門名</th>
+        </tr>
+    </thead>
+    <tbody>
+    @foreach (var department in Model)
+    {
+        <tr>
+            <td>@department.DepartmentId</td>
+            <td>@department.DepartmentName</td>
+        </tr>
+    }
+    </tbody>
+</table>
