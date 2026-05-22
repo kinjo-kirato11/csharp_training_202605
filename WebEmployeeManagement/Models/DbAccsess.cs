@@ -9,7 +9,7 @@ public class DbAccsess
 {
     private static readonly string ConnectionString =
         Environment.GetEnvironmentVariable("DB_CONNECTION_STRING")
-        ?? "Host=PostgreSQL 18;Port=5432;Database=EmployeeManagement;Username=postgres;Password=postgres";
+        ?? "Host=PostgreSQL 18;Port=5432;Database=EmployeeManagement;Username=postgres;Password=postgres"; 
  public static void Initialize()
     {
         using var connection = new NpgsqlConnection(ConnectionString);
