@@ -6,7 +6,7 @@ public class DbAccsess
 {
     private static readonly string ConnectionString =
         Environment.GetEnvironmentVariable("DB_CONNECTION_STRING")
-        ?? "Host=localhost;Username=postgres;Password=fullness;Database=sql_training2;Port=5432;";
+        ?? "Host=localhost;Username=postgres;Password=training;Database=sql_training2;Port=5432;";
 
     private static NpgsqlConnection CreateConnection()
     {
@@ -18,7 +18,7 @@ public class DbAccsess
         }
         catch (PostgresException ex) when (ex.SqlState == "28000" && ex.MessageText.Contains("role \"postgres\" does not exist"))
         {
-            var connection = new NpgsqlConnection("Host=localhost;Username=postgres;Password=fullness;Port=5432;Database=sql_training2;");
+            var connection = new NpgsqlConnection("Host=localhost;Username=postgres;Password=training;Port=5432;Database=sql_training2;");
             connection.Open();
             return connection;
         }
