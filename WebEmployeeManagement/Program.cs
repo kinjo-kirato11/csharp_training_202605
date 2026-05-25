@@ -2,6 +2,7 @@ using WebEmployeeManagement.Applications.Interfaces;
 using WebEmployeeManagement.Infrastructures.DataAccess;
 using WebEmployeeManagement.Applications.Services;
 using WebEmployeeManagement.Infrastructures.Repositories;
+using WebEmployeeManagement.Infrastructures.Entities;
 
 var builder = WebApplication.CreateBuilder(args);
 

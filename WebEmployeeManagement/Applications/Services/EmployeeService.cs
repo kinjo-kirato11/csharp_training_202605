@@ -1,40 +1,73 @@
 using WebEmployeeManagement.Infrastructures.Entities;
 using WebEmployeeManagement.Applications.Interfaces;
+using System;  
+using System.Collections.Generic;
+using WebEmployeeManagement.Applications.Services;
+using WebEmployeeManagement.Infrastructures.Repositories;
+
 
 namespace WebEmployeeManagement.Applications.Services
 {
+  public record EmployeeSaveResult(bool Succeeded, string? ErrorMessage);
+  
+    public record EmployeeDeleteResult(bool Succeeded, string? ErrorMessage);
+    public interface IEmployeeService
+{
+    EmployeeSaveResult Create(Employee employee);
+}
     public class EmployeeService : IEmployeeService
     {
-        private readonly IEmployeeRepository _employeeRepository;
+            private readonly IEmployeeRepository _employeeRepository;
 
-        public EmployeeService(IEmployeeRepository employeeRepository)
+        public EmployeeSaveResult Create(Employee employee)
         {
-            _employeeRepository = employeeRepository;
+            throw new NotImplementedException();
         }
 
-        public async Task<List<Employee>> GetAllEmployeesAsync()
+        public class EmployeeServie : IEmployeeService
+{
+    private readonly IEmployeeRepository _employeeRepository;
+
+    public EmployeeServie(IEmployeeRepository employeeRepository)
+    {
+        _employeeRepository = employeeRepository;
+    }
+
+    public List<Employee> GetAll()
+    {
+        return _employeeRepository.GetAll();
+    }
+
+    public Employee? Find(int employeeId)
+    {
+        return _employeeRepository.Find(employeeId);
+    }
+
+    public bool HasEmployees(int employeeId)
+    {
+        return _employeeRepository.HasEmployees(employeeId);
+    }
+
+    public EmployeeSaveResult Create(Employee employee)
+    {
+        if (_employeeRepository.ExistsById(employee.EmployeeId))
         {
-            return await _employeeRepository.GetAllAsync();
+            return new EmployeeSaveResult(false, "同一IDの従業員が既に存在しています。");
         }
 
-        public async Task<Employee?> GetEmployeeByIdAsync(int id)
+        try
         {
-            return await _employeeRepository.FindByIdAsync(id);
+            _employeeRepository.Add(employee);
+            _employeeRepository.SaveChanges();
+            return new EmployeeSaveResult(true, null);
         }
+        catch (Exception ex)
+        {
+            // ログ出力などのエラーハンドリングを行う
+            return new EmployeeSaveResult(false, $"従業員の保存中にエラーが発生しました: {ex.Message}");
+        }
+    }
 
-        public async Task AddEmployeeAsync(Employee employee)
-        {
-            await _employeeRepository.AddAsync(employee);
-        }
-
-        public async Task UpdateEmployeeAsync(Employee employee)
-        {
-            await _employeeRepository.UpdateAsync(employee);
-        }
-
-        public async Task DeleteEmployeeAsync(int id)
-        {
-            await _employeeRepository.DeleteAsync(id);
-        }
+    }
     }
 }

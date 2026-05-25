@@ -1,12 +1,16 @@
 using Npgsql;
 using WebEmployeeManagement.Applications.Interfaces;
 using WebEmployeeManagement.Infrastructures.Entities;
+using Microsoft.Extensions.Configuration;
+using System;
+using System.Collections.Generic;
+using WebEmployeeManagement.Applications.Services;
+using WebEmployeeManagement.Infrastructures.Repositories;
 
 namespace WebEmployeeManagement.Infrastructures.Repositories;
 
 public class EmployeeRepository : IEmployeeRepository
-{
-    private readonly string _connectionString;
+{    private readonly string _connectionString;
 
     public EmployeeRepository(IConfiguration configuration)
     {
@@ -15,36 +19,35 @@ public class EmployeeRepository : IEmployeeRepository
             ?? "Host=localhost;Port=5432;Database=sql_training";
     }
 
-    public async Task<List<Employee>> GetAllAsync()
+    public List<Employee> GetAll()
     {
-        await using var connection = await CreateConnectionAsync();
-        await using var command = connection.CreateCommand();
-        command.CommandText = "SELECT employee_id, employee_name, department_id FROM employees ORDER BY employee_id";
+        using var connection = CreateConnection();
+        using var command = connection.CreateCommand();
+        command.CommandText = "SELECT employee_id, employee_name FROM employees ORDER BY employee_id";
 
         var employees = new List<Employee>();
-        await using var reader = await command.ExecuteReaderAsync();
-        while (await reader.ReadAsync())
+        using var reader = command.ExecuteReader();
+        while (reader.Read())
         {
             employees.Add(new Employee
             {
-                EmployeeId = reader.GetInt16(0),
-                EmployeeName = reader.GetString(1),
-                DepartmentId = reader.GetInt16(2)
+                EmployeeId = reader.GetInt32(0),
+                EmployeeName = reader.GetString(1)
             });
         }
 
         return employees;
     }
 
-    public async Task<Employee?> FindByIdAsync(int id)
+    public Employee? Find(int employeeId)
     {
-        await using var connection = await CreateConnectionAsync();
-        await using var command = connection.CreateCommand();
-        command.CommandText = "SELECT employee_id, employee_name, department_id FROM employees WHERE employee_id = @employeeId";
-        command.Parameters.AddWithValue("employeeId", id);
+        using var connection = CreateConnection();
+        using var command = connection.CreateCommand();
+        command.CommandText = "SELECT employee_id, employee_name FROM employees WHERE employee_id = @employeeId";
+        command.Parameters.AddWithValue("employeeId", employeeId);
 
-        await using var reader = await command.ExecuteReaderAsync();
-        if (!await reader.ReadAsync())
+        using var reader = command.ExecuteReader();
+        if (!reader.Read())
         {
             return null;
         }
@@ -52,51 +55,78 @@ public class EmployeeRepository : IEmployeeRepository
         return new Employee
         {
             EmployeeId = reader.GetInt16(0),
-            EmployeeName = reader.GetString(1),
-            DepartmentId = reader.GetInt16(2)
+            EmployeeName = reader.GetString(1)
         };
     }
 
-    public async Task AddAsync(Employee employee)
+    public bool ExistsById(int departmentId)
     {
-        await using var connection = await CreateConnectionAsync();
-        await using var command = connection.CreateCommand();
-        command.CommandText = @"
-INSERT INTO employees (employee_id, employee_name, department_id)
-VALUES (@employeeId, @employeeName, @departmentId);";
-        command.Parameters.AddWithValue("employeeId", employee.EmployeeId);
-        command.Parameters.AddWithValue("employeeName", employee.EmployeeName);
-        command.Parameters.AddWithValue("departmentId", employee.DepartmentId);
-        await command.ExecuteNonQueryAsync();
+        using var connection = CreateConnection();
+        using var command = connection.CreateCommand();
+        command.CommandText = "SELECT COUNT(1) FROM departments WHERE department_id = @departmentId";
+        command.Parameters.AddWithValue("departmentId", departmentId);
+
+        return Convert.ToInt16(command.ExecuteScalar()) > 0;
     }
 
-    public async Task UpdateAsync(Employee employee)
+    public bool HasEmployees(int departmentId)
     {
-        await using var connection = await CreateConnectionAsync();
-        await using var command = connection.CreateCommand();
+        using var connection = CreateConnection();
+        using var command = connection.CreateCommand();
+        command.CommandText = "SELECT COUNT(1) FROM employees WHERE department_id = @departmentId";
+        command.Parameters.AddWithValue("departmentId", departmentId);
+
+        return Convert.ToInt32(command.ExecuteScalar()) > 0;
+    }
+
+    public void Add(Department department)
+    {
+        using var connection = CreateConnection();
+        using var command = connection.CreateCommand();
+        command.CommandText = @"
+INSERT INTO departments (department_id, department_name)
+VALUES (@departmentId, @departmentName);";
+        command.Parameters.AddWithValue("departmentId", department.DepartmentId);
+        command.Parameters.AddWithValue("departmentName", department.DepartmentName);
+        command.ExecuteNonQuery();
+    }
+
+    public void Remove(Department department)
+    {
+        using var connection = CreateConnection();
+        using var command = connection.CreateCommand();
+        command.CommandText = "DELETE FROM departments WHERE department_id = @departmentId";
+        command.Parameters.AddWithValue("departmentId", department.DepartmentId);
+        command.ExecuteNonQuery();
+    }
+
+    public void MoveEmployees(int fromDepartmentId, int toDepartmentId)
+    {
+        using var connection = CreateConnection();
+        using var command = connection.CreateCommand();
         command.CommandText = @"
 UPDATE employees
-SET employee_name = @employeeName, department_id = @departmentId
-WHERE employee_id = @employeeId;";
-        command.Parameters.AddWithValue("employeeId", employee.EmployeeId);
-        command.Parameters.AddWithValue("employeeName", employee.EmployeeName);
-        command.Parameters.AddWithValue("departmentId", employee.DepartmentId);
-        await command.ExecuteNonQueryAsync();
+SET department_id = @toDepartmentId
+WHERE department_id = @fromDepartmentId;";
+        command.Parameters.AddWithValue("toDepartmentId", toDepartmentId);
+        command.Parameters.AddWithValue("fromDepartmentId", fromDepartmentId);
+        command.ExecuteNonQuery();
     }
 
-    public async Task DeleteAsync(int id)
+    public void SaveChanges()
     {
-        await using var connection = await CreateConnectionAsync();
-        await using var command = connection.CreateCommand();
-        command.CommandText = "DELETE FROM employees WHERE employee_id = @employeeId";
-        command.Parameters.AddWithValue("employeeId", id);
-        await command.ExecuteNonQueryAsync();
+
     }
 
-    private async Task<NpgsqlConnection> CreateConnectionAsync()
+    private NpgsqlConnection CreateConnection()
     {
         var connection = new NpgsqlConnection(_connectionString);
-        await connection.OpenAsync();
+        connection.Open();
         return connection;
+    }
+
+    public void Add(Employee employee)
+    {
+        throw new NotImplementedException();
     }
 }

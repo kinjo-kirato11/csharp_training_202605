@@ -9,7 +9,6 @@ public interface IDepartmentRepository
     bool ExistsById(int departmentId);
     bool HasEmployees(int departmentId);
     void Add(Department department);
-    void Remove(Department department);
     void MoveEmployees(int fromDepartmentId, int toDepartmentId);
     void SaveChanges();
 }
