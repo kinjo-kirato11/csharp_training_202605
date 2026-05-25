@@ -50,7 +50,7 @@ public class DepartmentRepository : IDepartmentRepository
 
         return new Department
         {
-            DepartmentId = reader.GetInt32(0),
+            DepartmentId = reader.GetInt16(0),
             DepartmentName = reader.GetString(1)
         };
     }
@@ -62,7 +62,7 @@ public class DepartmentRepository : IDepartmentRepository
         command.CommandText = "SELECT COUNT(1) FROM departments WHERE department_id = @departmentId";
         command.Parameters.AddWithValue("departmentId", departmentId);
 
-        return Convert.ToInt32(command.ExecuteScalar()) > 0;
+        return Convert.ToInt16(command.ExecuteScalar()) > 0;
     }
 
     public bool HasEmployees(int departmentId)

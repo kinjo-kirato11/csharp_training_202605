@@ -27,9 +27,9 @@ public class EmployeeRepository : IEmployeeRepository
         {
             employees.Add(new Employee
             {
-                EmployeeId = reader.GetInt32(0),
+                EmployeeId = reader.GetInt16(0),
                 EmployeeName = reader.GetString(1),
-                DepartmentId = reader.GetInt32(2)
+                DepartmentId = reader.GetInt16(2)
             });
         }
 
@@ -51,9 +51,9 @@ public class EmployeeRepository : IEmployeeRepository
 
         return new Employee
         {
-            EmployeeId = reader.GetInt32(0),
+            EmployeeId = reader.GetInt16(0),
             EmployeeName = reader.GetString(1),
-            DepartmentId = reader.GetInt32(2)
+            DepartmentId = reader.GetInt16(2)
         };
     }
 
