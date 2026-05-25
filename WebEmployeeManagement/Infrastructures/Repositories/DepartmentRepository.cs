@@ -12,7 +12,7 @@ public class DepartmentRepository : IDepartmentRepository
     {
         _connectionString = configuration["DB_CONNECTION_STRING"]
             ?? Environment.GetEnvironmentVariable("DB_CONNECTION_STRING")
-            ?? "Host=localhost;Port=5432;Database=sql_training";
+            ?? "Host=localhost;Username=postgres;Password=training;Port=5432;Database=sql_training2;";
     }
 
     public List<Department> GetAll()
