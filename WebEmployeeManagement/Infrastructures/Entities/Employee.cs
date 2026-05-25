@@ -8,6 +8,7 @@ namespace WebEmployeeManagement.Infrastructures.Entities
         public int EmployeeId { get; set; }
 
         [Required(ErrorMessage = "社員名を入力してください。")]
+        [StringLength(30, ErrorMessage = "社員名は30文字以内で入力してください。")]
         [Display(Name = "社員名")]
         public string EmployeeName { get; set; } = string.Empty;
 
