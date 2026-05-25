@@ -17,7 +17,6 @@ namespace WebEmployeeManagement.Applications.Services
 }
     public class EmployeeService : IEmployeeService
     {
-            private readonly IEmployeeRepository _employeeRepository;
 
         public EmployeeSaveResult Create(Employee employee)
         {
