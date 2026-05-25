@@ -1,44 +1,74 @@
 <mxfile host="app.diagrams.net">
   <diagram name="ページ-1" id="_a7TSTPUD4ZUb4yu-kRl">
-    <mxGraphModel dx="774" dy="469" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="1106" dy="644" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
-        <mxCell id="LVNKJldPZUcnk_xSlG1G-1" parent="1" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" value="EmployeeList" vertex="1">
-          <mxGeometry height="120" width="170" x="170" y="140" as="geometry" />
+        <mxCell id="LVNKJldPZUcnk_xSlG1G-1" parent="1" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" value="IEmployeeService" vertex="1">
+          <mxGeometry height="170" width="370" x="690" y="870" as="geometry" />
         </mxCell>
-        <mxCell id="LVNKJldPZUcnk_xSlG1G-4" parent="LVNKJldPZUcnk_xSlG1G-1" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" value="+ ToString():String&lt;div&gt;+View(EmployeeList):void&lt;br&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;/div&gt;" vertex="1">
-          <mxGeometry height="94" width="170" y="26" as="geometry" />
+        <mxCell id="LVNKJldPZUcnk_xSlG1G-4" parent="LVNKJldPZUcnk_xSlG1G-1" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" value="&lt;div&gt;+GetAll():List&amp;lt;employee&amp;gt;&lt;/div&gt;&lt;div&gt;+Find(int:employeeId):Employee?&lt;/div&gt;&lt;div&gt;+HasEmployees(int:employeeId):bool&lt;/div&gt;&lt;div&gt;+Create(Employee:employee):EmployeeSaveResult&lt;/div&gt;" vertex="1">
+          <mxGeometry height="144" width="370" y="26" as="geometry" />
         </mxCell>
-        <mxCell id="LVNKJldPZUcnk_xSlG1G-5" parent="1" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" value="DepartmentList" vertex="1">
-          <mxGeometry height="120" width="170" x="400" y="140" as="geometry" />
+        <mxCell id="LVNKJldPZUcnk_xSlG1G-7" parent="1" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" value="EmployeeService" vertex="1">
+          <mxGeometry height="230" width="370" x="740" y="30" as="geometry" />
         </mxCell>
-        <mxCell id="LVNKJldPZUcnk_xSlG1G-6" parent="LVNKJldPZUcnk_xSlG1G-5" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" value="+ ToString():String&lt;div&gt;+View(DepartmentList):void&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" vertex="1">
-          <mxGeometry height="94" width="170" y="26" as="geometry" />
+        <mxCell id="LVNKJldPZUcnk_xSlG1G-8" parent="LVNKJldPZUcnk_xSlG1G-7" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" value="&lt;div&gt;&lt;div&gt;&lt;div&gt;&lt;div&gt;+EmployeeService(EmployeeRepository:employeeRepository):void&lt;/div&gt;&lt;div&gt;+GetAll():List&amp;lt;Employee&amp;gt;&lt;/div&gt;&lt;div&gt;+Find(int:employeeId):Employee?&lt;/div&gt;&lt;div&gt;+HasEmployees(int:employeeId):bool&lt;/div&gt;&lt;div&gt;+Create(Employee:employee):EmployeeSaveResult&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="204" width="370" y="26" as="geometry" />
         </mxCell>
-        <mxCell id="LVNKJldPZUcnk_xSlG1G-7" parent="1" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" value="EmployeeAdd" vertex="1">
-          <mxGeometry height="120" width="170" x="170" y="380" as="geometry" />
+        <mxCell id="XEeW4aa25n1djjn3nusc-1" parent="1" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" value="IEmployeeRepository" vertex="1">
+          <mxGeometry height="230" width="370" x="650" y="1390" as="geometry" />
         </mxCell>
-        <mxCell id="LVNKJldPZUcnk_xSlG1G-8" parent="LVNKJldPZUcnk_xSlG1G-7" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" value="+ Add(String):void&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" vertex="1">
-          <mxGeometry height="94" width="170" y="26" as="geometry" />
+        <mxCell id="XEeW4aa25n1djjn3nusc-2" parent="XEeW4aa25n1djjn3nusc-1" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" value="&lt;div&gt;&lt;div&gt;+GetAll():List&amp;lt;Employee&amp;gt;&lt;/div&gt;&lt;div&gt;+Find(int:employeeId):Employee?&lt;/div&gt;&lt;div&gt;+HasEmployees(int:employeeId):bool&lt;/div&gt;&lt;div&gt;+Add(Employee:employee):void&lt;/div&gt;&lt;div&gt;+SaveChanges():void&lt;/div&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="204" width="370" y="26" as="geometry" />
         </mxCell>
-        <mxCell id="LVNKJldPZUcnk_xSlG1G-9" parent="1" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" value="DepartmentAdd" vertex="1">
-          <mxGeometry height="120" width="170" x="405" y="380" as="geometry" />
+        <mxCell id="XEeW4aa25n1djjn3nusc-3" parent="1" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=20;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" value="EmployeeRepository" vertex="1">
+          <mxGeometry height="224" width="370" x="1150" y="630" as="geometry" />
         </mxCell>
-        <mxCell id="LVNKJldPZUcnk_xSlG1G-10" parent="LVNKJldPZUcnk_xSlG1G-9" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" value="+ Add(String):void&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" vertex="1">
-          <mxGeometry height="94" width="170" y="26" as="geometry" />
+        <mxCell id="XEeW4aa25n1djjn3nusc-4" parent="XEeW4aa25n1djjn3nusc-3" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" value="&lt;div&gt;&lt;div&gt;+GetAll():List&amp;lt;Employee&amp;gt;&lt;/div&gt;&lt;div&gt;+Find(int:employeeId):Employee?&lt;/div&gt;&lt;div&gt;+HasEmployees(int:employeeId):bool&lt;/div&gt;&lt;div&gt;+Add(Employee:employee):void&lt;/div&gt;&lt;div&gt;+SaveChanges():void&lt;/div&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="204" width="370" y="20" as="geometry" />
         </mxCell>
-        <mxCell id="LVNKJldPZUcnk_xSlG1G-11" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="社員一覧を取得して表示" vertex="1">
-          <mxGeometry height="30" width="160" x="175" y="90" as="geometry" />
+        <mxCell id="a_GTFi7uTZp5GSq5-afZ-1" parent="1" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" value="IDpartmentService" vertex="1">
+          <mxGeometry height="230" width="370" x="690" y="560" as="geometry" />
         </mxCell>
-        <mxCell id="LVNKJldPZUcnk_xSlG1G-12" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="部署一覧を取得して表示" vertex="1">
-          <mxGeometry height="30" width="160" x="414" y="90" as="geometry" />
+        <mxCell id="a_GTFi7uTZp5GSq5-afZ-2" parent="a_GTFi7uTZp5GSq5-afZ-1" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" value="&lt;div&gt;+GetAll():List&amp;lt;Department&amp;gt;&lt;/div&gt;&lt;div&gt;+Find(int:departmentId):Department?&lt;/div&gt;&lt;div&gt;&lt;div&gt;&lt;div&gt;+HasDemployee(int:departmentId):bool&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;div&gt;+Create(department:Department):DepartmentSaveResult&lt;/div&gt;" vertex="1">
+          <mxGeometry height="204" width="370" y="26" as="geometry" />
         </mxCell>
-        <mxCell id="LVNKJldPZUcnk_xSlG1G-13" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="社員を追加する" vertex="1">
-          <mxGeometry height="30" width="160" x="170" y="320" as="geometry" />
+        <mxCell id="a_GTFi7uTZp5GSq5-afZ-5" parent="1" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" value="IDpartmentRepository" vertex="1">
+          <mxGeometry height="230" width="370" x="630" y="1200" as="geometry" />
         </mxCell>
-        <mxCell id="LVNKJldPZUcnk_xSlG1G-14" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="部署を追加する" vertex="1">
-          <mxGeometry height="30" width="160" x="410" y="320" as="geometry" />
+        <mxCell id="a_GTFi7uTZp5GSq5-afZ-6" parent="a_GTFi7uTZp5GSq5-afZ-5" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" value="&lt;div&gt;+GetAll():List&amp;lt;Department&amp;gt;&lt;/div&gt;&lt;div&gt;+Find(int dpartmentId):Department?&lt;/div&gt;&lt;div&gt;&lt;div&gt;&lt;div&gt;+HasDepartment(int:dpartmentId):bool&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;div&gt;+Add(D&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;epartment:&lt;/span&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;department):void&lt;/span&gt;&lt;/div&gt;&lt;div&gt;+SaveChanges():void&lt;/div&gt;" vertex="1">
+          <mxGeometry height="204" width="370" y="26" as="geometry" />
+        </mxCell>
+        <mxCell id="lWAH3MMMERo5BaSei4aF-1" parent="1" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=20;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" value="DepartmentRepository" vertex="1">
+          <mxGeometry height="224" width="370" x="1160" y="350" as="geometry" />
+        </mxCell>
+        <mxCell id="lWAH3MMMERo5BaSei4aF-2" parent="lWAH3MMMERo5BaSei4aF-1" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" value="&lt;div&gt;&lt;div&gt;+GetAll():List&amp;lt;Department&amp;gt;&lt;/div&gt;&lt;div&gt;+Find(int:departmentId):Department?&lt;/div&gt;&lt;div&gt;+HasDepartment(int:departmentId):bool&lt;/div&gt;&lt;div&gt;+Add(D&lt;span style=&quot;color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255)); background-color: transparent;&quot;&gt;epartment:&lt;/span&gt;&lt;span style=&quot;color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255)); background-color: transparent;&quot;&gt;department&lt;/span&gt;):void&lt;/div&gt;&lt;div&gt;+SaveChanges():void&lt;/div&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="204" width="370" y="20" as="geometry" />
+        </mxCell>
+        <mxCell id="a_GTFi7uTZp5GSq5-afZ-3" parent="1" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" value="DpartmentService" vertex="1">
+          <mxGeometry height="240" width="400" x="740" y="300" as="geometry" />
+        </mxCell>
+        <mxCell id="a_GTFi7uTZp5GSq5-afZ-4" parent="a_GTFi7uTZp5GSq5-afZ-3" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" value="&lt;div&gt;+DepartmentService(DepartmentRepository:departmentRepository):void&lt;/div&gt;&lt;div&gt;+GetAll():List&amp;lt;Department&amp;gt;&lt;/div&gt;&lt;div&gt;+Find(int:departmentId):Department?&lt;/div&gt;&lt;div&gt;&lt;div&gt;&lt;div&gt;+HasDepartment(int:departmentId):bool&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;div&gt;+Create(D&lt;span style=&quot;color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255)); background-color: transparent;&quot;&gt;epartment:&lt;/span&gt;&lt;span style=&quot;color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255)); background-color: transparent;&quot;&gt;department&lt;/span&gt;):DepartmentSaveResult&lt;/div&gt;" vertex="1">
+          <mxGeometry height="214" width="400" y="26" as="geometry" />
+        </mxCell>
+        <mxCell id="lWAH3MMMERo5BaSei4aF-4" parent="1" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" value="DpartmentsController" vertex="1">
+          <mxGeometry height="230" width="370" x="210" y="50" as="geometry" />
+        </mxCell>
+        <mxCell id="lWAH3MMMERo5BaSei4aF-5" parent="lWAH3MMMERo5BaSei4aF-4" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" value="+Index():GetDepartments&lt;div&gt;+Create():void;&lt;/div&gt;&lt;div&gt;+Create(Department department):department&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="204" width="370" y="26" as="geometry" />
+        </mxCell>
+        <mxCell id="lWAH3MMMERo5BaSei4aF-6" parent="1" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" value="EmployeeController" vertex="1">
+          <mxGeometry height="230" width="370" x="210" y="300" as="geometry" />
+        </mxCell>
+        <mxCell id="lWAH3MMMERo5BaSei4aF-7" parent="lWAH3MMMERo5BaSei4aF-6" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" value="+Index():GetEmployees&lt;div&gt;+Create():void;&lt;/div&gt;&lt;div&gt;+Create(Employee employee):employeet&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="204" width="370" y="26" as="geometry" />
+        </mxCell>
+        <mxCell id="lWAH3MMMERo5BaSei4aF-8" parent="1" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" value="HomeController" vertex="1">
+          <mxGeometry height="230" width="370" x="200" y="590" as="geometry" />
+        </mxCell>
+        <mxCell id="lWAH3MMMERo5BaSei4aF-9" parent="lWAH3MMMERo5BaSei4aF-8" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" value="+Index():void&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255)); white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;" vertex="1">
+          <mxGeometry height="204" width="370" y="26" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
