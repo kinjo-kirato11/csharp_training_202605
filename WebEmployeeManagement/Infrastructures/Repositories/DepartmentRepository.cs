@@ -69,4 +69,10 @@ public class DepartmentRepository : IDepartmentRepository
                 "指定された部署Idの部署を取得できませんでした。", e);
         }
     }
+
+    public void Create(Department department)
+    {
+        
+    }
+
 }

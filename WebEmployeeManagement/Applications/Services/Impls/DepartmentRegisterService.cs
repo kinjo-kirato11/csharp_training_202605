@@ -13,10 +13,7 @@ public class DepartmentRegisterService : IDepartmentRegisterService
     /// アプリケーション用DbContext
     /// </summary>
     private readonly AppDbContext _context;
-    /// <summary>
-    /// ドメインオブジェクト:従業員のCRUD操作インターフェイス
-    /// </summary>
-    private readonly IDepartmentRepository _departmentRepository;
+
     /// <summary>
     /// ドメインオブジェクト:部署のCRUD操作インターフェイス
     /// </summary>
@@ -30,6 +27,7 @@ public class DepartmentRegisterService : IDepartmentRegisterService
     /// <param name="departmentRepository">部署のCRUD操作インターフェイス</param>
     public DepartmentRegisterService(
         AppDbContext context,
+        IEmployeeRepository employeeRepository,
         IDepartmentRepository departmentRepository)
     {
         _context = context;
@@ -71,7 +69,7 @@ public class DepartmentRegisterService : IDepartmentRegisterService
             // トランザクションの開始
             _context.Database.BeginTransaction();
             // 従業員の登録
-            _employeeRepository.Create(department);
+            _departmentRepository.Create(department);
             // トランザクションのコミット
             _context.Database.CommitTransaction();
         }
