@@ -7,8 +7,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebEmployeeManagement", "We
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebEmployeeManagement.Test", "WebEmployeeManagement.Test\WebEmployeeManagement.Test.csproj", "{DA8A698E-A613-4411-A1BB-81D7FB9C4A14}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApp_Sample", "WebApp_Sample\WebApp_Sample.csproj", "{AB831298-7ED1-4513-82D0-A2C928CA8E9F}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
