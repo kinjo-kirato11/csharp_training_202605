@@ -3,7 +3,7 @@
 @* View が受け取るデータ型（ViewModel）を宣言asp-for はこの型のプロパティと結びつける *@
 @model DepartmentRegisterViewModel;
 @{
-    ViewData["Title"] = "従業員登録(入力)";
+    ViewData["Title"] = "部署登録(入力)";
 }
 <h2 class="text-center mt-4">@ViewData["Title"]</h2>
 
@@ -15,7 +15,8 @@
                 <div class="mb-3">
                     <label asp-for="DeptId" class="form-label"></label>
                     @*asp-itemsはSelectListItemのリストを受け取る*@
-                    <select asp-for="DeptId" class="form-control"></select>
+                    <input asp-for="DeptId" class="form-control">
+                    <span asp-validation-for="DeptId" class="text-danger"></span>
                 </div>
                 <div class="mb-3">
                     @* Tag Helperがname属性やid属性を自動生成 Model Bindingに必要なHTMLが作成される*@

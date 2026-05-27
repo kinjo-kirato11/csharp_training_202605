@@ -12,12 +12,14 @@ public class DepartmentRegisterViewModel
     /// </summary>
     ///     [Display(Name = "部署名")]
     /// 
+    [Display(Name = "部署番号")]
+    [Required(ErrorMessage = "{0}は入力必須です。")]
+    public int? DeptId { get; set; } = 0;
     [Display(Name = "部署名")]
     [Required(ErrorMessage = "{0}は入力必須です。")]
     public string? DeptName { get; set; } = string.Empty;
 
-    [Display(Name = "部署番号")]
-    public int? DeptId { get; set; } = 0;
+
 
 
 
