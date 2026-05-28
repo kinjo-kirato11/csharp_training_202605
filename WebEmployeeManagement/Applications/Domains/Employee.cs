@@ -70,6 +70,12 @@ public class Employee
         if (obj is not Employee other) return false;
         return Id == other.Id;
     }
+        public Employee(int id, string? name, Department? department)
+    {
+        Id = id;
+        ChangeName(name);
+        ChangeDepartment(department);
+    }
     
 
     public override int GetHashCode() => Id?.GetHashCode() ?? 0;
