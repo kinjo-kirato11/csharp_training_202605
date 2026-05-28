@@ -1,16 +1,27 @@
 using Microsoft.AspNetCore.Mvc;
 using WebEmployeeManagement.Infrastructures.Entities;
 using WebEmployeeManagement.Infrastructures.Context;
+using WebEmployeeManagement.Applications.Services;
 
 namespace WebEmployeeManagement.Presentations.Controllers;
 
+
+    [Route("Departmet")]
 public class DepartmentsController : Controller
 {
-[Route("Departmet")]
 
-    public IActionResult Index()
+    private readonly IDepartmentListService _departmentListService;
+
+    public DepartmentsController(IDepartmentListService departmentListService)
     {
-        return View();
+        _departmentListService = departmentListService;
     }
 
-}   
+    [HttpGet("Index")]
+    public IActionResult Index()
+    {
+        var departments = _departmentListService.GetDepartments();
+        return View(departments);
+    }
+
+}

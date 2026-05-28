@@ -1,12 +1,12 @@
 
-@model List<WebEmployeeManagement.Infrastructures.Entities.DepartmentEntity>
+@model List<WebEmployeeManagement.Applications.Domains.Department>
 @{
     ViewData["Title"] = "部署一覧";
 }
 
 <h2>部署一覧</h2>
     
-        <a asp-controller="Departments" asp-action="Enter" class="btn btn-primary">部門登録</a>
+        <a asp-controller="Departmet" asp-action="Enter" class="btn btn-primary">部門登録</a>
           <a asp-controller="Home" asp-action="Index" class="btn btn-primary">ホーム</a>
 
 
@@ -22,8 +22,8 @@
     @foreach (var department in Model)
     {
         <tr>
-            <td>@department.DeptId</td>
-            <td>@department.DeptName</td>
+            <td>@department.Id</td>
+            <td>@department.Name</td>
         </tr>
     }
     </tbody>

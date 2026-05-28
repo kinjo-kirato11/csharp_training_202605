@@ -1,13 +1,13 @@
 @using Microsoft.AspNetCore.Mvc;
 @using WebEmployeeManagement.Infrastructures.Entities;
-@model List<WebEmployeeManagement.Infrastructures.Entities.EmployeeEntity>
+@model List<WebEmployeeManagement.Applications.Domains.Employee>
 @{
     ViewData["Title"] = "社員一覧";
 }
 
 <h2>社員一覧</h2>
- <a asp-controller="Employees" asp-action="Enter" class="btn btn-primary">社員登録</a>
-  <a asp-controller="Home" asp-action="Index" class="btn btn-primary">ホーム</a>
+<a asp-controller="Employee" asp-action="Enter" class="btn btn-primary">社員登録</a>
+<a asp-controller="Home" asp-action="Index" class="btn btn-primary">ホーム</a>
 <table class="table table-bordered">
     <thead>
         <tr>
@@ -17,13 +17,15 @@
         </tr>
     </thead>
     <tbody>
-    @foreach (var employee in Model)
-    {
-        <tr>
-            <td>@employee.EmpId</td>
-            <td>@employee.EmpName</td>
-            <td>@employee.DeptId</td>
-        </tr>
-    }
+        @foreach (var employee in Model)
+        {
+            <tr>
+                <td>@employee.Id</td>
+                <td>@employee.Department?.Name</td>
+                <td>@employee.Id</td>
+
+
+            </tr>
+        }
     </tbody>
 </table>
