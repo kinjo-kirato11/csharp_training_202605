@@ -70,6 +70,7 @@ public class Employee
         if (obj is not Employee other) return false;
         return Id == other.Id;
     }
+    
 
     public override int GetHashCode() => Id?.GetHashCode() ?? 0;
 

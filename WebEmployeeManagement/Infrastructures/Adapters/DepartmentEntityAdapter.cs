@@ -29,6 +29,8 @@ IConverter<Department, DepartmentEntity>, IRestorer<Department, DepartmentEntity
         }
         return entity;
     }
+    
+
 
     /// <summary>
     /// DepartmentEntityからドメインオブジェクト:Departmentを復元する

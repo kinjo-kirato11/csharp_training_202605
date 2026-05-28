@@ -47,11 +47,12 @@ public class EmployeeRepository : IEmployeeRepository
                 "従業員の永続化ができませんでした。", e);
         }
     }
-       public List<Employee> FindAll()
+    public List<Employee> FindAll()
     {
         try
         {
             var entities = _context.Employees.ToList();
+            var employees = _adapter.ToDomainList(entities);
             var results = new List<Employee>();
             foreach (var entity in entities)
             {
@@ -65,4 +66,5 @@ public class EmployeeRepository : IEmployeeRepository
                 "すべての社員を取得できませんでした。", e);
         }
     }
+
 }

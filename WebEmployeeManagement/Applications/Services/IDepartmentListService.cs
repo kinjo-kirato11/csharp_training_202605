@@ -10,5 +10,6 @@ public interface IDepartmentListService
     /// </summary>
     /// <returns></returns>
     List<Department> GetDepartments();
+      Department GetById(int id);
 
 }

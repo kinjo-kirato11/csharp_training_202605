@@ -21,6 +21,10 @@ public class EmployeeEntity
     /// <summary>
     /// 所属部署Id(外部キー)
     /// </summary>
+
     [Column("dept_id")]
     public int? DeptId { get; set; }
+
+  [ForeignKey("DeptId")]
+    public DepartmentEntity? Department { get; set; }
 }

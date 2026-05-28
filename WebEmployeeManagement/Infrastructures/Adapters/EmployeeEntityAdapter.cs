@@ -46,4 +46,32 @@ IConverter<Employee, EmployeeEntity>, IRestorer<Employee, EmployeeEntity>
         );
         return employee;
     }
+        public Employee ToDomain(EmployeeEntity source)
+    {
+        if (source == null)
+            throw new ArgumentNullException("引数がnullのため復元できません。");
+        Department? department = null;
+        // 部署がnulでない
+        if (source.Department != null)
+        {
+            // 所属部署を生成する
+            department = new Department(source.Department.DeptId, source.Department.DeptName, null);
+        }
+        // 社員を生成して返す
+        var employee = new Employee(source.DeptId, source.EmpName, department);
+        return employee;
+    }
+      public List<Employee> ToDomainList(List<EmployeeEntity> sources)
+    {
+        if (sources == null)
+            throw new ArgumentNullException("引数がnullのため復元できません。");
+        // Employeeのリストを生成する
+        var employees = new List<Employee>();
+        // EmployeeEntityのリストからEmployeeのリストへ変換する
+        foreach (var source in sources)
+        {
+            employees.Add(ToDomain(source));
+        }
+        return employees;
+    }
 }

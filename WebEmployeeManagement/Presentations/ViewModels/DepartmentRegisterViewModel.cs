@@ -27,4 +27,5 @@ public class DepartmentRegisterViewModel
     {
         return $"DeptId={DeptId} , DeptName={DeptName}";
     }
+    
 }

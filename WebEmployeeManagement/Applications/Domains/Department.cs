@@ -1,4 +1,5 @@
 using WebEmployeeManagement.Exceptions;
+using WebEmployeeManagement.Infrastructures.Entities;
 namespace WebEmployeeManagement.Applications.Domains;
 /// <summary>
 /// 所属部署を表すドメインオブジェクト
@@ -8,12 +9,14 @@ public class Department
     public int? Id { get; private set; }      // 部署Id
     public string? Name { get; private set; } = string.Empty;    // 部署名
     private const int MaxLength = 20; // 部署名の長さ
+       public List<Employee>? Employees { get; private set; }
+    
     /// <summary>
     /// コンストラクタ
     /// </summary>
     /// <param name="id">部署Id</param>
     /// <param name="name">部署名</param>
-    public Department(int? id, string? name)
+    public  Department(int? id, string? name)
     {
         // 部署名のルール検証
         validateDepartmentName(name);
@@ -33,6 +36,13 @@ public class Department
     public Department(int? id)
     {
         Id = id;
+    }
+      public Department(int? id, string name, List<Employee>? department)
+    {
+        validateDepartmentName(Name);
+        Id = id;
+        Name = name;
+        Employees = department;
     }
 
     /// <summary>
@@ -60,6 +70,10 @@ public class Department
         validateDepartmentName(name);
         this.Name = name;
     }
+    
+
+
+        
 
     /// <summary>
     /// 等価性の検証

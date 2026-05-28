@@ -33,6 +33,9 @@ public class EmployeeListService : IEmployeeListService
         }
         return result;
     }
-
+    public List<Department> GetDepartments()
+    {
+        return _departmentRepository.FindAll();
+    }
 
 }
